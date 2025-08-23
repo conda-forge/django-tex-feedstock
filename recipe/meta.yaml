@@ -1,18 +1,18 @@
 {% set name = "django-tex" %}
-{% set version = "1.1.10" %}
+{% set version = "1.1.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-tex-{{ version }}.tar.gz
-  sha256: 0b763a3782fee20c85e2b564561f130af269f25b0499fdafd49e55befd6803f8
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: deb2c6f9e79ece0698ad09524e5169f9cd19285df8a64cc9e9f96d088a52363d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
